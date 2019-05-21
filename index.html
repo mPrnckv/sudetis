@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>sudėtis!</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <h1>SUDĖKIME SKAIČIUS!</h1>
+<div class="sluoksnis">
+    <table id="t1" cellspacing=0 cellpadding=0>
+    <tr>
+        <td class="lang"><p id="sk1"></p></td>
+    </tr>
+    <tr>
+        <td class="lang2">+</td>
+    </tr>
+    <tr>
+        <td class="lang"><p id="sk2"></p></td>
+    </tr>
+    <tr>
+        <td class="misc"><div class="linija"></div></td>
+    </tr>
+    <tr>
+        <td class="misc"><input class="in" id="in1"></td>
+    </tr>
+    </table>
+    
+    <table id="t2">
+    <tr>
+        <td><button class ="mygtukas" onclick=naujas()>Tikrink!</button></td>
+        <td><button class ="mygtukas" id = "b1">0</button></td>
+    </tr>
+    </table>
+</div>
+<script>
+    document.getElementById("sk1").innerHTML =Math.floor(Math.random() * 101);
+    document.getElementById("sk2").innerHTML =Math.floor(Math.random() * 101);
+    function naujas() {
+        var x = document.getElementById("sk1").textContent;
+        var y = document.getElementById("sk2").textContent;
+        var z = document.getElementById("in1").value;
+        var i = document.getElementById("b1").innerHTML;
+        var j = Number(i) + 1;
+        if (Number(x) + Number(y) == z)  {
+            document.getElementById("sk1").innerHTML =Math.floor(Math.random() * 101);
+            document.getElementById("sk2").innerHTML =Math.floor(Math.random() * 101);
+            document.getElementById("in1").style.backgroundColor="rgb(79, 194, 144)";
+            document.getElementById("b1").innerHTML = j;
+        } 
+        else if (z == "fuchsia") {document.getElementById("in1").style.backgroundColor="fuchsia";}
+        else {
+            document.getElementById("in1").style.backgroundColor="#FFA69E";
+        }
+    }
+ 
+</script>
+</body>
+</html>
